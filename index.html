@@ -250,6 +250,124 @@
         }
         .card { background: linear-gradient(180deg, rgba(255,255,255,.96), rgba(255,255,255,.84)); border-radius: 24px; box-shadow: var(--shadow-md); border: 1px solid rgba(255,255,255,.82); overflow: hidden; margin-bottom: 20px; }
         /* (All other original CSS classes are preserved exactly as in the provided document) */
+
+        /* ── Inner Tab Bar ─────────────────────────────────────── */
+        .tab-bar {
+            display: flex;
+            gap: 4px;
+            padding: 16px 20px 0;
+            border-bottom: 1px solid rgba(148, 163, 184, 0.18);
+            flex-wrap: wrap;
+            background: transparent;
+        }
+        .tab-btn {
+            padding: 10px 20px;
+            border-radius: 12px 12px 0 0;
+            border: none;
+            background: transparent;
+            color: #64748b;
+            font-size: .87rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background .2s, color .2s;
+            white-space: nowrap;
+        }
+        .tab-btn:hover {
+            background: rgba(139, 92, 246, 0.08);
+            color: #7c3aed;
+        }
+        .tab-btn.active {
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.14), rgba(6, 182, 212, 0.10));
+            color: #7c3aed;
+            border-bottom: 3px solid #8b5cf6;
+        }
+        .tab-pane { display: none; }
+        .tab-pane.active { display: block; }
+        .tab-content { padding: 20px; }
+        .tab-section-title {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--slate);
+            margin-bottom: 14px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 14px;
+            margin-bottom: 20px;
+        }
+        .info-card {
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.06), rgba(6, 182, 212, 0.04));
+            border: 1px solid rgba(139, 92, 246, 0.14);
+            border-radius: 16px;
+            padding: 18px;
+        }
+        .info-card .ic-label { font-size: .76rem; font-weight: 700; color: #94a3b8; text-transform: uppercase; letter-spacing: .05em; margin-bottom: 6px; }
+        .info-card .ic-value { font-size: 1.3rem; font-weight: 700; color: var(--slate); }
+        .info-card .ic-sub { font-size: .78rem; color: #64748b; margin-top: 4px; }
+        .section-table-wrap { overflow-x: auto; }
+        table { width: 100%; border-collapse: collapse; font-size: .86rem; }
+        th { background: rgba(248,250,252,0.9); padding: 10px 14px; text-align: left; font-size: .75rem; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; color: #64748b; border-bottom: 1px solid rgba(148,163,184,.18); }
+        td { padding: 12px 14px; border-bottom: 1px solid rgba(148,163,184,.10); color: var(--slate); }
+        tr:last-child td { border-bottom: none; }
+        tr:hover td { background: rgba(139,92,246,.03); }
+        .badge { display: inline-flex; align-items: center; padding: 3px 10px; border-radius: 999px; font-size: .74rem; font-weight: 700; }
+        .badge-green { background: rgba(22,163,74,.12); color: #16a34a; }
+        .badge-amber { background: rgba(217,119,6,.12); color: #d97706; }
+        .badge-red { background: rgba(220,38,38,.12); color: #dc2626; }
+        .badge-blue { background: rgba(37,99,235,.12); color: #2563eb; }
+        .badge-purple { background: rgba(139,92,246,.12); color: #7c3aed; }
+        .btn { display: inline-flex; align-items: center; gap: 6px; padding: 9px 18px; border-radius: 12px; border: none; font-size: .85rem; font-weight: 600; cursor: pointer; transition: all .2s; }
+        .btn-primary { background: linear-gradient(135deg, var(--purple), var(--cyan)); color: #fff; box-shadow: 0 8px 20px rgba(139,92,246,.28); }
+        .btn-primary:hover { transform: translateY(-1px); box-shadow: 0 12px 28px rgba(139,92,246,.36); }
+        .btn-ghost { background: rgba(148,163,184,.12); color: var(--slate); }
+        .btn-sm { padding: 7px 14px; font-size: .8rem; }
+        .card-header { display: flex; align-items: center; justify-content: space-between; padding: 18px 20px; border-bottom: 1px solid rgba(148,163,184,.14); }
+        .card-header h3 { font-size: 1rem; font-weight: 700; color: var(--slate); }
+        .card-body { padding: 20px; }
+        .section { display: none; }
+        .section.active { display: block; }
+        .stat-card.purple { border-top: 3px solid var(--purple); }
+        .stat-card.cyan { border-top: 3px solid var(--cyan); }
+        .stat-card.amber { border-top: 3px solid var(--amber); }
+        .stat-card.green { border-top: 3px solid var(--green); }
+        .stat-card .label { font-size: .72rem; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; color: #94a3b8; margin-bottom: 8px; }
+        .stat-card .value { font-size: 1.9rem; font-weight: 800; color: var(--slate); margin-bottom: 4px; }
+        .stat-card .sub { font-size: .78rem; color: #64748b; }
+        .page-header { display: flex; flex-direction: column; gap: 2px; }
+        .page-kicker { font-size: .74rem; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: #94a3b8; }
+        .page-subtitle { font-size: .86rem; color: #64748b; margin-top: 2px; }
+        .topbar-right { display: flex; align-items: center; gap: 12px; }
+        .status-pill { padding: 6px 14px; border-radius: 999px; background: rgba(22,163,74,.12); color: #16a34a; font-size: .78rem; font-weight: 700; }
+        .clock-chip { font-size: .82rem; font-weight: 600; color: #64748b; }
+        .sidebar-footer { padding: 16px 12px; border-top: 1px solid rgba(148,163,184,.12); }
+        .user-pill { display: flex; align-items: center; gap: 10px; padding: 10px; border-radius: 16px; background: rgba(148,163,184,.08); margin-bottom: 8px; }
+        .user-avatar { font-size: 1.6rem; }
+        .user-info .name { font-weight: 700; font-size: .88rem; color: #e2e8f0; }
+        .role-badge { display: inline-flex; padding: 2px 8px; border-radius: 999px; font-size: .7rem; font-weight: 700; }
+        .role-admin { background: rgba(139,92,246,.22); color: #c4b5fd; }
+        .logout-btn { width: 100%; padding: 10px; border-radius: 14px; border: none; background: rgba(220,38,38,.14); color: #fca5a5; font-size: .84rem; font-weight: 600; cursor: pointer; transition: background .2s; }
+        .logout-btn:hover { background: rgba(220,38,38,.24); }
+        .modal-overlay { position: fixed; inset: 0; background: rgba(15,23,42,.6); backdrop-filter: blur(8px); display: flex; align-items: center; justify-content: center; z-index: 200; }
+        .modal-overlay[hidden] { display: none; }
+        .modal { background: #fff; border-radius: 24px; padding: 28px; min-width: 340px; max-width: 480px; width: 90vw; box-shadow: 0 40px 80px rgba(15,23,42,.22); }
+        .modal h3 { font-size: 1.1rem; font-weight: 700; color: var(--slate); margin-bottom: 18px; }
+        .modal-footer { display: flex; justify-content: flex-end; gap: 10px; margin-top: 20px; }
+        .form-group { margin-bottom: 14px; }
+        .form-group label { display: block; font-size: .8rem; font-weight: 700; color: #64748b; margin-bottom: 6px; text-transform: uppercase; letter-spacing: .05em; }
+        .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 10px 14px; border-radius: 12px; border: 1px solid rgba(148,163,184,.28); background: rgba(248,250,252,.9); font-size: .88rem; color: var(--slate); outline: none; }
+        .form-group input:focus, .form-group select:focus { border-color: var(--purple); box-shadow: 0 0 0 3px rgba(139,92,246,.12); }
+        .login-card h2 { font-size: 1.3rem; font-weight: 700; color: #e2e8f0; margin-bottom: 20px; }
+        .login-btn { width: 100%; padding: 14px; border-radius: 14px; border: none; background: linear-gradient(135deg, var(--purple), var(--cyan)); color: #fff; font-size: 1rem; font-weight: 700; cursor: pointer; transition: opacity .2s, transform .2s; margin-top: 8px; }
+        .login-btn:hover { opacity: .92; transform: translateY(-1px); }
+        .login-msg { margin-top: 10px; font-size: .86rem; color: #f87171; }
+        .login-help { margin-top: 16px; font-size: .78rem; color: #94a3b8; text-align: center; }
+        .bottom-nav { display: none; }
+        .orb-container { display: none; }
+        .menu-overlay { display: none; }
     </style>
 </head>
 <body>
@@ -318,6 +436,8 @@
             <div class="nav-item active" onclick="navigateTo('dashboard')" id="nav-dashboard"><span class="ni">📊</span> Dashboard</div>
             <div class="nav-item" onclick="navigateTo('members')" id="nav-members"><span class="ni">👪</span> Family Members</div>
             <div class="nav-item" onclick="navigateTo('portfolio')" id="nav-portfolio"><span class="ni">💰</span> Portfolio Assets</div>
+            <div class="nav-item" onclick="navigateTo('property-portfolio')" id="nav-property-portfolio"><span class="ni">🏘️</span> Property Portfolio</div>
+            <div class="nav-item" onclick="navigateTo('business-portfolio')" id="nav-business-portfolio"><span class="ni">🏢</span> Business Portfolio</div>
             <div class="nav-item" onclick="navigateTo('heirlooms')" id="nav-heirlooms"><span class="ni">💎</span> Heirlooms</div>
             <div class="nav-item" onclick="navigateTo('stories')" id="nav-stories"><span class="ni">📖</span> Family Stories</div>
             <div class="nav-item" onclick="navigateTo('tree')" id="nav-tree"><span class="ni">🌳</span> Family Tree</div>
@@ -375,9 +495,39 @@
                         <h3>👪 Family Members</h3>
                         <button class="btn btn-primary btn-sm" onclick="openModal('member')">+ Add Member</button>
                     </div>
-                    <div class="card-body" style="padding:0">
-                        <table><thead><tr><th>Name</th><th>Role</th><th>Generation</th><th>Age</th><th>Contact</th><th>Actions</th></tr></thead>
-                        <tbody id="members-tbody"></tbody></table>
+                    <!-- Inner tab bar -->
+                    <div class="tab-bar" id="members-tab-bar">
+                        <button class="tab-btn active" onclick="switchTab('members','status',this)">📋 Member Status</button>
+                        <button class="tab-btn" onclick="switchTab('members','documentation',this)">📂 Members Documentation</button>
+                    </div>
+                    <!-- Tab: Member Status -->
+                    <div class="tab-pane active" id="members-tab-status">
+                        <div class="section-table-wrap">
+                            <table><thead><tr><th>Name</th><th>Role</th><th>Generation</th><th>Age</th><th>Contact</th><th>Status</th><th>Actions</th></tr></thead>
+                            <tbody id="members-tbody">
+                                <tr><td>Goodness Nkosi</td><td>Family Archivist</td><td>2nd Gen</td><td>48</td><td>goodness@nkosi.family</td><td><span class="badge badge-green">Active</span></td><td><button class="btn btn-ghost btn-sm">Edit</button></td></tr>
+                                <tr><td>Themba Nkosi</td><td>Patriarch</td><td>1st Gen</td><td>74</td><td>themba@nkosi.family</td><td><span class="badge badge-green">Active</span></td><td><button class="btn btn-ghost btn-sm">Edit</button></td></tr>
+                                <tr><td>Sipho Nkosi</td><td>Son</td><td>3rd Gen</td><td>24</td><td>sipho@nkosi.family</td><td><span class="badge badge-amber">Away</span></td><td><button class="btn btn-ghost btn-sm">Edit</button></td></tr>
+                            </tbody></table>
+                        </div>
+                    </div>
+                    <!-- Tab: Members Documentation -->
+                    <div class="tab-pane" id="members-tab-documentation">
+                        <div class="tab-content">
+                            <div class="tab-section-title">📂 Members Documentation</div>
+                            <div class="section-table-wrap">
+                                <table><thead><tr><th>Member</th><th>Document Type</th><th>Reference No.</th><th>Issue Date</th><th>Expiry Date</th><th>Status</th><th>Actions</th></tr></thead>
+                                <tbody>
+                                    <tr><td>Goodness Nkosi</td><td>ID Document</td><td>78****089</td><td>2015-03-10</td><td>—</td><td><span class="badge badge-green">Valid</span></td><td><button class="btn btn-ghost btn-sm">View</button></td></tr>
+                                    <tr><td>Goodness Nkosi</td><td>Passport</td><td>A123****8</td><td>2019-06-01</td><td>2029-06-01</td><td><span class="badge badge-green">Valid</span></td><td><button class="btn btn-ghost btn-sm">View</button></td></tr>
+                                    <tr><td>Themba Nkosi</td><td>ID Document</td><td>50****081</td><td>2000-01-15</td><td>—</td><td><span class="badge badge-green">Valid</span></td><td><button class="btn btn-ghost btn-sm">View</button></td></tr>
+                                    <tr><td>Sipho Nkosi</td><td>Passport</td><td>B987****2</td><td>2021-09-14</td><td>2031-09-14</td><td><span class="badge badge-green">Valid</span></td><td><button class="btn btn-ghost btn-sm">View</button></td></tr>
+                                </tbody></table>
+                            </div>
+                            <div style="margin-top:16px;">
+                                <button class="btn btn-primary btn-sm">+ Upload Document</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -400,6 +550,168 @@
 
             <!-- STORIES, TREE, DOCUMENTS, WISHES, ACTIVITY – similar card/table structure as original -->
             <!-- (All other sections follow the same polished pattern as the original admin UI) -->
+
+            <!-- PROPERTY PORTFOLIO -->
+            <div class="section" id="sec-property-portfolio">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>🏘️ Property Portfolio</h3>
+                        <button class="btn btn-primary btn-sm" onclick="openModal('property')">+ Add Property</button>
+                    </div>
+                    <div class="tab-bar" id="property-tab-bar">
+                        <button class="tab-btn active" onclick="switchTab('property','valuations',this)">📊 Valuations</button>
+                        <button class="tab-btn" onclick="switchTab('property','debts',this)">💳 Debts</button>
+                        <button class="tab-btn" onclick="switchTab('property','expenditure',this)">📅 Monthly Expenditure</button>
+                    </div>
+                    <!-- Tab: Valuations -->
+                    <div class="tab-pane active" id="property-tab-valuations">
+                        <div class="tab-content">
+                            <div class="info-grid">
+                                <div class="info-card"><div class="ic-label">Total Portfolio Value</div><div class="ic-value">R 6.2m</div><div class="ic-sub">4 properties</div></div>
+                                <div class="info-card"><div class="ic-label">Last Valuation</div><div class="ic-value">Mar 2026</div><div class="ic-sub">Professional appraisal</div></div>
+                                <div class="info-card"><div class="ic-label">YTD Appreciation</div><div class="ic-value">+9.4%</div><div class="ic-sub">vs prior year</div></div>
+                            </div>
+                            <div class="section-table-wrap">
+                                <table><thead><tr><th>Property</th><th>Location</th><th>Type</th><th>Current Value (ZAR)</th><th>Last Valued</th><th>Valuation Method</th><th>Actions</th></tr></thead>
+                                <tbody>
+                                    <tr><td>Nkosi Family Home</td><td>Pretoria North</td><td>Residential</td><td>R 2,800,000</td><td>Jan 2026</td><td>Professional</td><td><button class="btn btn-ghost btn-sm">Edit</button></td></tr>
+                                    <tr><td>Hatfield Flat</td><td>Hatfield, Pretoria</td><td>Residential</td><td>R 1,450,000</td><td>Feb 2026</td><td>Professional</td><td><button class="btn btn-ghost btn-sm">Edit</button></td></tr>
+                                    <tr><td>Mamelodi Rental</td><td>Mamelodi East</td><td>Residential/Rental</td><td>R 980,000</td><td>Mar 2026</td><td>Comparable Sales</td><td><button class="btn btn-ghost btn-sm">Edit</button></td></tr>
+                                    <tr><td>Centurion Commercial</td><td>Centurion</td><td>Commercial</td><td>R 970,000</td><td>Dec 2025</td><td>Income Approach</td><td><button class="btn btn-ghost btn-sm">Edit</button></td></tr>
+                                </tbody></table>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Tab: Debts -->
+                    <div class="tab-pane" id="property-tab-debts">
+                        <div class="tab-content">
+                            <div class="info-grid">
+                                <div class="info-card"><div class="ic-label">Total Outstanding Debt</div><div class="ic-value">R 1.84m</div><div class="ic-sub">Across all properties</div></div>
+                                <div class="info-card"><div class="ic-label">Monthly Bond Payments</div><div class="ic-value">R 22,400</div><div class="ic-sub">Combined</div></div>
+                                <div class="info-card"><div class="ic-label">Equity Ratio</div><div class="ic-value">70.3%</div><div class="ic-sub">Net equity in portfolio</div></div>
+                            </div>
+                            <div class="section-table-wrap">
+                                <table><thead><tr><th>Property</th><th>Lender</th><th>Outstanding Balance</th><th>Monthly Payment</th><th>Interest Rate</th><th>Maturity Date</th><th>Status</th><th>Actions</th></tr></thead>
+                                <tbody>
+                                    <tr><td>Nkosi Family Home</td><td>Absa Bank</td><td>R 980,000</td><td>R 9,800</td><td>11.25%</td><td>2035-03</td><td><span class="badge badge-green">Current</span></td><td><button class="btn btn-ghost btn-sm">Edit</button></td></tr>
+                                    <tr><td>Hatfield Flat</td><td>Standard Bank</td><td>R 620,000</td><td>R 7,200</td><td>11.50%</td><td>2033-08</td><td><span class="badge badge-green">Current</span></td><td><button class="btn btn-ghost btn-sm">Edit</button></td></tr>
+                                    <tr><td>Mamelodi Rental</td><td>FNB</td><td>R 240,000</td><td>R 5,400</td><td>10.75%</td><td>2029-11</td><td><span class="badge badge-amber">Review</span></td><td><button class="btn btn-ghost btn-sm">Edit</button></td></tr>
+                                </tbody></table>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Tab: Monthly Expenditure -->
+                    <div class="tab-pane" id="property-tab-expenditure">
+                        <div class="tab-content">
+                            <div class="info-grid">
+                                <div class="info-card"><div class="ic-label">Total Monthly Costs</div><div class="ic-value">R 34,760</div><div class="ic-sub">All properties combined</div></div>
+                                <div class="info-card"><div class="ic-label">Rental Income</div><div class="ic-value">R 14,500</div><div class="ic-sub">Mamelodi + Centurion</div></div>
+                                <div class="info-card"><div class="ic-label">Net Monthly Outflow</div><div class="ic-value">R 20,260</div><div class="ic-sub">After rental offset</div></div>
+                            </div>
+                            <div class="section-table-wrap">
+                                <table><thead><tr><th>Property</th><th>Expense Category</th><th>Monthly Amount (ZAR)</th><th>Notes</th><th>Actions</th></tr></thead>
+                                <tbody>
+                                    <tr><td>Nkosi Family Home</td><td>Bond Repayment</td><td>R 9,800</td><td>Absa Bank</td><td><button class="btn btn-ghost btn-sm">Edit</button></td></tr>
+                                    <tr><td>Nkosi Family Home</td><td>Rates &amp; Taxes</td><td>R 1,400</td><td>City of Tshwane</td><td><button class="btn btn-ghost btn-sm">Edit</button></td></tr>
+                                    <tr><td>Nkosi Family Home</td><td>Insurance</td><td>R 860</td><td>Sanlam</td><td><button class="btn btn-ghost btn-sm">Edit</button></td></tr>
+                                    <tr><td>Hatfield Flat</td><td>Bond Repayment</td><td>R 7,200</td><td>Standard Bank</td><td><button class="btn btn-ghost btn-sm">Edit</button></td></tr>
+                                    <tr><td>Hatfield Flat</td><td>Levies</td><td>R 2,100</td><td>Body corporate</td><td><button class="btn btn-ghost btn-sm">Edit</button></td></tr>
+                                    <tr><td>Mamelodi Rental</td><td>Bond Repayment</td><td>R 5,400</td><td>FNB</td><td><button class="btn btn-ghost btn-sm">Edit</button></td></tr>
+                                    <tr><td>Mamelodi Rental</td><td>Maintenance</td><td>R 1,200</td><td>Avg monthly</td><td><button class="btn btn-ghost btn-sm">Edit</button></td></tr>
+                                    <tr><td>Centurion Commercial</td><td>Rates &amp; Taxes</td><td>R 2,800</td><td>City of Tshwane</td><td><button class="btn btn-ghost btn-sm">Edit</button></td></tr>
+                                    <tr><td>Centurion Commercial</td><td>Insurance</td><td>R 1,400</td><td>OUTsurance</td><td><button class="btn btn-ghost btn-sm">Edit</button></td></tr>
+                                    <tr><td>Centurion Commercial</td><td>Maintenance</td><td>R 2,600</td><td>Avg monthly</td><td><button class="btn btn-ghost btn-sm">Edit</button></td></tr>
+                                </tbody></table>
+                            </div>
+                            <div style="margin-top:16px;"><button class="btn btn-primary btn-sm">+ Add Expense</button></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- BUSINESS PORTFOLIO -->
+            <div class="section" id="sec-business-portfolio">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>🏢 Business Portfolio</h3>
+                        <button class="btn btn-primary btn-sm" onclick="openModal('business')">+ Add Entity</button>
+                    </div>
+                    <div class="tab-bar" id="business-tab-bar">
+                        <button class="tab-btn active" onclick="switchTab('business','entities',this)">🏛️ Registered Entities</button>
+                        <button class="tab-btn" onclick="switchTab('business','cipro',this)">📋 CIPRO Documentation</button>
+                        <button class="tab-btn" onclick="switchTab('business','bankaccounts',this)">🏦 Bank Accounts</button>
+                        <button class="tab-btn" onclick="switchTab('business','currentstate',this)">📈 Current State</button>
+                    </div>
+                    <!-- Tab: Registered Entities -->
+                    <div class="tab-pane active" id="business-tab-entities">
+                        <div class="tab-content">
+                            <div class="section-table-wrap">
+                                <table><thead><tr><th>Entity Name</th><th>Type</th><th>Reg. Number</th><th>Registration Date</th><th>Directors/Members</th><th>Status</th><th>Actions</th></tr></thead>
+                                <tbody>
+                                    <tr><td>Nkosi Holdings (Pty) Ltd</td><td>Private Company</td><td>2018/123456/07</td><td>2018-04-12</td><td>T. Nkosi, G. Nkosi</td><td><span class="badge badge-green">Active</span></td><td><button class="btn btn-ghost btn-sm">Edit</button></td></tr>
+                                    <tr><td>Nkosi Family Trust</td><td>Trust</td><td>IT 4567/2015</td><td>2015-09-01</td><td>T. Nkosi (Trustee)</td><td><span class="badge badge-green">Active</span></td><td><button class="btn btn-ghost btn-sm">Edit</button></td></tr>
+                                    <tr><td>Sithole Legacy Investments CC</td><td>Close Corporation</td><td>2010/987654/23</td><td>2010-02-18</td><td>G. Nkosi, S. Nkosi</td><td><span class="badge badge-amber">Dormant</span></td><td><button class="btn btn-ghost btn-sm">Edit</button></td></tr>
+                                </tbody></table>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Tab: CIPRO Documentation -->
+                    <div class="tab-pane" id="business-tab-cipro">
+                        <div class="tab-content">
+                            <div class="tab-section-title">📋 CIPRO / CIPC Documentation</div>
+                            <div class="section-table-wrap">
+                                <table><thead><tr><th>Entity</th><th>Document Type</th><th>Reference</th><th>Date Filed</th><th>Next Filing Due</th><th>Status</th><th>Actions</th></tr></thead>
+                                <tbody>
+                                    <tr><td>Nkosi Holdings (Pty) Ltd</td><td>Annual Return</td><td>AR-2025-78341</td><td>2025-04-30</td><td>2026-04-30</td><td><span class="badge badge-green">Filed</span></td><td><button class="btn btn-ghost btn-sm">View</button></td></tr>
+                                    <tr><td>Nkosi Holdings (Pty) Ltd</td><td>CoR 14.3 – Director Change</td><td>CoR-2024-11029</td><td>2024-08-15</td><td>—</td><td><span class="badge badge-green">Lodged</span></td><td><button class="btn btn-ghost btn-sm">View</button></td></tr>
+                                    <tr><td>Nkosi Family Trust</td><td>Trust Deed</td><td>TD-2015-4567</td><td>2015-09-01</td><td>—</td><td><span class="badge badge-blue">On File</span></td><td><button class="btn btn-ghost btn-sm">View</button></td></tr>
+                                    <tr><td>Sithole Legacy Investments CC</td><td>Annual Return</td><td>AR-2024-55123</td><td>2024-02-28</td><td>2025-02-28</td><td><span class="badge badge-red">Overdue</span></td><td><button class="btn btn-ghost btn-sm">View</button></td></tr>
+                                </tbody></table>
+                            </div>
+                            <div style="margin-top:16px;"><button class="btn btn-primary btn-sm">+ Upload CIPRO Document</button></div>
+                        </div>
+                    </div>
+                    <!-- Tab: Bank Accounts -->
+                    <div class="tab-pane" id="business-tab-bankaccounts">
+                        <div class="tab-content">
+                            <div class="info-grid">
+                                <div class="info-card"><div class="ic-label">Total Business Balances</div><div class="ic-value">R 842,300</div><div class="ic-sub">Across all accounts</div></div>
+                                <div class="info-card"><div class="ic-label">Active Accounts</div><div class="ic-value">4</div><div class="ic-sub">3 entities</div></div>
+                            </div>
+                            <div class="section-table-wrap">
+                                <table><thead><tr><th>Entity</th><th>Bank</th><th>Account Type</th><th>Account No.</th><th>Current Balance</th><th>Currency</th><th>Status</th><th>Actions</th></tr></thead>
+                                <tbody>
+                                    <tr><td>Nkosi Holdings (Pty) Ltd</td><td>Absa Bank</td><td>Business Current</td><td>**** 4321</td><td>R 412,000</td><td>ZAR</td><td><span class="badge badge-green">Active</span></td><td><button class="btn btn-ghost btn-sm">Edit</button></td></tr>
+                                    <tr><td>Nkosi Holdings (Pty) Ltd</td><td>FNB</td><td>Business Savings</td><td>**** 8870</td><td>R 285,000</td><td>ZAR</td><td><span class="badge badge-green">Active</span></td><td><button class="btn btn-ghost btn-sm">Edit</button></td></tr>
+                                    <tr><td>Nkosi Family Trust</td><td>Nedbank</td><td>Trust Account</td><td>**** 3345</td><td>R 128,300</td><td>ZAR</td><td><span class="badge badge-green">Active</span></td><td><button class="btn btn-ghost btn-sm">Edit</button></td></tr>
+                                    <tr><td>Sithole Legacy Investments CC</td><td>Standard Bank</td><td>Business Current</td><td>**** 9901</td><td>R 17,000</td><td>ZAR</td><td><span class="badge badge-amber">Dormant</span></td><td><button class="btn btn-ghost btn-sm">Edit</button></td></tr>
+                                </tbody></table>
+                            </div>
+                            <div style="margin-top:16px;"><button class="btn btn-primary btn-sm">+ Add Bank Account</button></div>
+                        </div>
+                    </div>
+                    <!-- Tab: Current State -->
+                    <div class="tab-pane" id="business-tab-currentstate">
+                        <div class="tab-content">
+                            <div class="tab-section-title">📈 Current State of Business Portfolio</div>
+                            <div class="info-grid">
+                                <div class="info-card"><div class="ic-label">Active Entities</div><div class="ic-value">2</div><div class="ic-sub">of 3 registered</div></div>
+                                <div class="info-card"><div class="ic-label">Combined Revenue (YTD)</div><div class="ic-value">R 1.24m</div><div class="ic-sub">Jan–Mar 2026</div></div>
+                                <div class="info-card"><div class="ic-label">Outstanding Compliance</div><div class="ic-value">1 item</div><div class="ic-sub">Sithole CC annual return</div></div>
+                                <div class="info-card"><div class="ic-label">Total Business Assets</div><div class="ic-value">R 2.1m</div><div class="ic-sub">Estimated combined</div></div>
+                            </div>
+                            <div class="section-table-wrap">
+                                <table><thead><tr><th>Entity</th><th>Operating Status</th><th>Industry</th><th>Annual Revenue</th><th>Employees</th><th>Compliance</th><th>Next Action</th></tr></thead>
+                                <tbody>
+                                    <tr><td>Nkosi Holdings (Pty) Ltd</td><td><span class="badge badge-green">Trading</span></td><td>Property &amp; Investments</td><td>R 980,000</td><td>3</td><td><span class="badge badge-green">Up to date</span></td><td>Annual return Apr 2026</td></tr>
+                                    <tr><td>Nkosi Family Trust</td><td><span class="badge badge-green">Active</span></td><td>Asset Holding</td><td>R 265,000</td><td>0</td><td><span class="badge badge-green">Up to date</span></td><td>Trustee review Jun 2026</td></tr>
+                                    <tr><td>Sithole Legacy Investments CC</td><td><span class="badge badge-amber">Dormant</span></td><td>Investments</td><td>R 0</td><td>0</td><td><span class="badge badge-red">Non-compliant</span></td><td>File annual return now</td></tr>
+                                </tbody></table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
         </div>
     </main>
@@ -433,28 +745,104 @@
     // (All original Firebase logic is kept, only collection names and UI labels changed)
     // Dashboard, tables, filters, and modals now serve Family Portfolio data
 
-    // Sample data & logic adapted from original but themed for family legacy
-    window.onload = function() {
-        // Auto-login simulation for demo
-        document.getElementById('app').style.display = 'block';
-        document.getElementById('login-screen').style.display = 'none';
-        loadDashboard();
-        // All other load functions (members, portfolio, etc.) follow the same pattern as the original
+    // ── Navigation ──────────────────────────────────────────────
+    const sections = ['dashboard','members','portfolio','property-portfolio','heirlooms','stories','tree','documents','wishes','activity','business-portfolio'];
+    const titles = {
+        dashboard: ['Dashboard','Your complete family legacy & portfolio at a glance.'],
+        members: ['Family Members','Manage and view all family member records and documentation.'],
+        portfolio: ['Portfolio Assets','Track all family investments, properties and assets.'],
+        'property-portfolio': ['Property Portfolio','Valuations, debts and monthly expenditure across all properties.'],
+        heirlooms: ['Family Heirlooms','Precious items passed down through the generations.'],
+        stories: ['Family Stories','Preserved memories, wisdom and milestones.'],
+        tree: ['Family Tree','Visualise generational connections and lineage.'],
+        documents: ['Documents & Wills','Legal documents, wills and estate planning.'],
+        wishes: ['Values & Wishes','Family values, ethics and legacy wishes.'],
+        activity: ['Activity Log','Recent changes and audit trail.'],
+        'business-portfolio': ['Business Portfolio','Registered entities, compliance, accounts and current business state.'],
     };
 
+    window.navigateTo = function(page) {
+        sections.forEach(s => {
+            const sec = document.getElementById('sec-' + s);
+            const nav = document.getElementById('nav-' + s);
+            if (sec) sec.classList.toggle('active', s === page);
+            if (nav) nav.classList.toggle('active', s === page);
+        });
+        const t = titles[page] || [page, ''];
+        document.getElementById('page-title').textContent = t[0];
+        document.getElementById('page-subtitle').textContent = t[1];
+    };
+
+    // ── Inner tab switching ──────────────────────────────────────
+    window.switchTab = function(group, pane, btn) {
+        // Deactivate all tab panes for this group (match only .tab-pane elements)
+        document.querySelectorAll('[id^="' + group + '-tab-"].tab-pane').forEach(el => el.classList.remove('active'));
+        // Deactivate all buttons in the tab bar
+        const bar = document.getElementById(group + '-tab-bar');
+        if (bar) bar.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+        // Activate selected pane and button
+        const target = document.getElementById(group + '-tab-' + pane);
+        if (target) target.classList.add('active');
+        if (btn) btn.classList.add('active');
+    };
+
+    // ── Modals ───────────────────────────────────────────────────
+    window.openModal = function(type) {
+        const m = document.getElementById('modal-' + type);
+        if (m) m.removeAttribute('hidden');
+    };
+    window.closeModal = function(type) {
+        const m = document.getElementById('modal-' + type);
+        if (m) m.setAttribute('hidden', '');
+    };
+    window.saveMember = function() { closeModal('member'); };
+
+    // ── Auth ─────────────────────────────────────────────────────
+    window.doLogin = function() {
+        const email = document.getElementById('l-email').value.trim();
+        const pass  = document.getElementById('l-password').value;
+        if (email === 'goodness@nkosi.family' && pass === 'legacy2026') {
+            document.getElementById('login-screen').style.display = 'none';
+            document.getElementById('app').style.display = 'block';
+            loadDashboard();
+        } else {
+            document.getElementById('login-msg').textContent = 'Invalid credentials. Please try again.';
+        }
+    };
+    window.doLogout = function() {
+        document.getElementById('app').style.display = 'none';
+        document.getElementById('login-screen').style.display = 'flex';
+    };
+
+    // ── Clock ────────────────────────────────────────────────────
+    function updateClock() {
+        const el = document.getElementById('topbar-date');
+        if (el) el.textContent = new Date().toLocaleString('en-ZA', { dateStyle: 'medium', timeStyle: 'short' });
+    }
+    setInterval(updateClock, 1000);
+    updateClock();
+
+    // ── Dashboard ────────────────────────────────────────────────
     function loadDashboard() {
-        // Beautiful stats cards for family portfolio
         document.getElementById('stats-grid').innerHTML = `
             <div class="stat-card purple"><div class="label">👪 FAMILY MEMBERS</div><div class="value">12</div><div class="sub">4 generations • 3 in Pretoria</div></div>
             <div class="stat-card cyan"><div class="label">💰 PORTFOLIO VALUE</div><div class="value">R 8.4m</div><div class="sub">+12% YTD</div></div>
             <div class="stat-card amber"><div class="label">💎 HEIRLOOMS</div><div class="value">19</div><div class="sub">8 passed to next generation</div></div>
             <div class="stat-card green"><div class="label">📖 STORIES RECORDED</div><div class="value">47</div><div class="sub">3 new this month</div></div>
         `;
-        // More panels...
+        const pb = document.getElementById('portfolio-breakdown');
+        if (pb) pb.innerHTML = `<p style="color:#64748b;font-size:.9rem;padding:12px 0;">Property: R 6.2m &nbsp;|&nbsp; Investments: R 1.4m &nbsp;|&nbsp; Business: R 840k &nbsp;|&nbsp; Other: R 360k</p>`;
+        const ra = document.getElementById('recent-activity');
+        if (ra) ra.innerHTML = `<p style="color:#64748b;font-size:.9rem;padding:12px 0;">No recent activity to display.</p>`;
     }
 
-    // All navigation, modals, tables, filters work exactly like the original admin UI but with family data
-    // (Full JS functionality from the provided document is preserved and repurposed)
+    // ── Init ─────────────────────────────────────────────────────
+    window.onload = function() {
+        document.getElementById('app').style.display = 'block';
+        document.getElementById('login-screen').style.display = 'none';
+        navigateTo('dashboard');
+        loadDashboard();
+    };
 </script>
 </body>
 </html>
